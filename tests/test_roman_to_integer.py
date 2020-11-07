@@ -2,10 +2,10 @@ import os
 import sys
 import unittest
 sys.path.append(os.pardir)
-from  import Solution
+from roman_to_integer import Solution
 
 
-class PalindromeNumberTestCase(unittest.TestCase):
+class RomanToIntegerTestCase(unittest.TestCase):
     def setUp(self):
         self.solution = Solution()
 
