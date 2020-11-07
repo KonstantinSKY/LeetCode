@@ -28,10 +28,10 @@ class PalindromeNumberTestCase(unittest.TestCase):
         self.assertEqual(self.solution.isPalindrome(34433443), True)
 
     def test_example7(self):
-        self.assertEqual(self.solution.isPalindrome(3434435), True)
+        self.assertEqual(self.solution.isPalindrome(3434435), False)
 
     def test_example8(self):
-        self.assertEqual(self.solution.isPalindrome(101001010), True)
+        self.assertEqual(self.solution.isPalindrome(101001010), False)
 
     def test_example9(self):
         self.assertEqual(self.solution.isPalindrome(54645433), False)
