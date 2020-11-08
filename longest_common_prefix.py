@@ -3,6 +3,9 @@ from typing import List
 
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
+        pass
+
+    def firstlongestCommonPrefix(self, strs: List[str]) -> str:
         print(*strs)
         print(len(set('sfsdfds')))
         if len(strs) == 0 or len(strs[0]) == 0:
@@ -18,15 +21,24 @@ class Solution:
             prefix = chk_prfx
         return prefix
 
-    def sds(self, strs: List[str]) -> str:
+
+    def fastest(self, strs: List[str]) -> str:
         result = ''
         if not strs:
             return ''
         else:
-            print(set(zip(*strs)))
+            print("list: ", strs)
+            print("*list: ", *strs)
+            print("zip(*strs): ", zip(*strs))
+            print("list(zip(strs)): ", list(zip(strs)))
+            print("list(zip(*strs)): ", list(zip(*strs)))
+            print("set(zip(*strs): ", set(zip(*strs)))
+            print("set(zip(*strs): ", set(zip(*strs)))
+            print("set(zip(*strs[0]): ", set(zip(*strs)))
+
             for i in zip(*strs):
-                print(i)
-                print(set(i))
+                print("i", i)
+                print("set(i)", set(i))
                 if len(set(i)) == 1:
                     result += i[0]
                 else:
@@ -35,7 +47,7 @@ class Solution:
 
 if __name__ == "__main__":
     start_time = time.time()
-    print(Solution().sds(["flower", "flowe", "flowet"]))
+    print(Solution().fastest(["flower", "flowesdf", "flowethj", "flyydfgr", "fluent"]))
     # print(Solution().longestCommonPrefix([]))
     # print(Solution().longestCommonPrefix(["a"]))
     # print(Solution().longestCommonPrefix(["asds"]))
