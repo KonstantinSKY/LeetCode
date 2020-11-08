@@ -23,7 +23,7 @@ class Solution:
 
 
     def fastest(self, strs: List[str]) -> str:
-        result = ''
+        prefix = ''
         if not strs:
             return ''
         else:
@@ -40,10 +40,9 @@ class Solution:
                 print("i", i)
                 print("set(i)", set(i))
                 if len(set(i)) == 1:
-                    result += i[0]
+                    prefix += i[0]
                 else:
-                    break
-        return result
+                    return prefix
 
 if __name__ == "__main__":
     start_time = time.time()
