@@ -12,7 +12,7 @@ class Solution:
                 continue
             if not last_open or last_open[-1] != coll[char]:
                 return False
-            last_open.pop(-1)
+            last_open.pop()
         if last_open:
             return False
         return True
