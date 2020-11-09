@@ -3,6 +3,13 @@ from typing import List
 
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
+        if target in nums:
+            return nums.index(target)
+        nums.append(target)
+        return sorted(nums).index(target)
+
+
+    def searchInsert1(self, nums: List[int], target: int) -> int:
         for i, num in enumerate(nums):
             if num >= target:
                 return i
