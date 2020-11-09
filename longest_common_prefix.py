@@ -1,9 +1,18 @@
 import time
 from typing import List
 
+
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        pass
+        if not strs:
+            return ''
+        prefix = ''
+        for i in zip(*strs):
+            if len(set(i)) == 1:
+                prefix += i[0]
+            else:
+                break
+        return prefix
 
     def firstlongestCommonPrefix(self, strs: List[str]) -> str:
         print(*strs)
@@ -42,14 +51,15 @@ class Solution:
                 if len(set(i)) == 1:
                     prefix += i[0]
                 else:
-                    return prefix
+                    break
+            return prefix
 
 if __name__ == "__main__":
     start_time = time.time()
-    print(Solution().fastest(["flower", "flowesdf", "flowethj", "flyydfgr", "fluent"]))
-    # print(Solution().longestCommonPrefix([]))
-    # print(Solution().longestCommonPrefix(["a"]))
-    # print(Solution().longestCommonPrefix(["asds"]))
-    # print(Solution().longestCommonPrefix(["asds", ""]))
+    print(Solution().longestCommonPrefix(["flower", "flowesdf", "flowethj", "flyydfgr", "fluent"]))
+    print(Solution().longestCommonPrefix([]))
+    print(Solution().longestCommonPrefix(["a"]))
+    print(Solution().longestCommonPrefix(["asds"]))
+    print(Solution().longestCommonPrefix(["asds", ""]))
 
     print("--- %s seconds ---" % (time.time() - start_time))
