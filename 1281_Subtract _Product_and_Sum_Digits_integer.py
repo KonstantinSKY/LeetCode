@@ -21,6 +21,16 @@ class Solution:
 
         return num_mul - num_sum
 
+    def subtractProductAndSum3(self, n: int) -> int:
+        sum = mul = n % 10
+        n = n // 10
+        while n > 0:
+            digit = n % 10
+            sum += digit
+            mul *= digit
+            n = n // 10
+
+        return mul - sum
 
 if __name__ == "__main__":
     start_time = time.time()
