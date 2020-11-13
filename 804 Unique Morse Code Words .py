@@ -3,6 +3,7 @@
 import time
 from typing import List
 
+
 class Solution:
     def uniqueMorseRepresentations(self, words: List[str]) -> int:
         alphabet = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.",
@@ -15,6 +16,7 @@ class Solution:
                 word_morse += alphabet[ord(letter)-97]
             words_morse.append(word_morse)
         return len(set(words_morse))
+
 
 if __name__ == "__main__":
     start_time = time.time()
