@@ -11,6 +11,13 @@ class Solution:
             new_arr.extend([sum(arr[j: j + i]) for j in range(len(arr) - i + 1)])
         return sum(new_arr)
 
+    def sumOddLengthSubarrays2(self, arr: List[int]) -> int:
+        res = 0
+        n = len(arr)
+        for i in range(n):
+            res += ((i + 1) * (n - i) + 1) // 2 * arr[i]
+        return res
+
 
 if __name__ == "__main__":
     start_time = time.time()
