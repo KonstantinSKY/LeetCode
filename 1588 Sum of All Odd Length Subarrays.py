@@ -7,8 +7,9 @@ from typing import List
 class Solution:
     def sumOddLengthSubarrays(self, arr: List[int]) -> int:
         sum_odd = 0
-        for i in range(1, len(arr) + 1, 2):
-            for j in range(len(arr) - i + 1):
+        n = len(arr)
+        for i in range(1, n + 1, 2):
+            for j in range(n - i + 1):
                 sum_odd += sum(arr[j: j + i])
         return sum_odd
 
