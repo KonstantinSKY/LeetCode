@@ -6,10 +6,11 @@ from typing import List
 
 class Solution:
     def sumOddLengthSubarrays(self, arr: List[int]) -> int:
-        new_arr = []
+        sum_odd = 0
         for i in range(1, len(arr) + 1, 2):
-            new_arr.extend([sum(arr[j: j + i]) for j in range(len(arr) - i + 1)])
-        return sum(new_arr)
+            for j in range(len(arr) - i + 1):
+                sum_odd += sum(arr[j: j + i])
+        return sum_odd
 
     def sumOddLengthSubarrays2(self, arr: List[int]) -> int:
         res = 0
