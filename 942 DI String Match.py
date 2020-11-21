@@ -4,7 +4,7 @@ import time
 from typing import List
 
 class Solution:
-    def diStringMatch(self, S: str) -> List[int]:
+    def diStringMatch2(self, S: str) -> List[int]:
 
         lenx = len(S)
         lx = {"I": 0, "D": -1}
@@ -13,6 +13,18 @@ class Solution:
         for i in range(1, lenx):
             res.append(arr.pop(lx[S[i]]))
         return res + arr
+
+    def diStringMatch(self, S: str) -> List[int]:
+        res = []
+        lo, hi = len(S), 0
+        for i in S:
+            if i == 'I':
+                res.append(hi)
+                hi += 1
+            else:
+                res.append(lo)
+                lo -= 1
+        return res + [lo]
 
 
 if __name__ == "__main__":
