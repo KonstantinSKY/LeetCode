@@ -5,10 +5,20 @@ from typing import List
 
 
 class Solution:
-    def minSubsequence(self, nums: List[int]) -> List[int]:
+    def minSubsequence2(self, nums: List[int]) -> List[int]:
         nums.sort(reverse=True)
         i = 1
         while sum(nums[:i]) <= sum(nums[i:]):
+            i += 1
+        return nums[:i]
+
+    def minSubsequence(self, nums: List[int]) -> List[int]:
+        nums.sort(reverse=True)
+        left = nums[0]
+        sum_nums = sum(nums)
+        i = 1
+        while left <= sum_nums - left:
+            left += nums[i]
             i += 1
         return nums[:i]
 
