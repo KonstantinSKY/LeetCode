@@ -12,7 +12,7 @@ class Solution:
             i += 1
         return nums[:i]
 
-    def minSubsequence(self, nums: List[int]) -> List[int]:
+    def minSubsequence3(self, nums: List[int]) -> List[int]:
         nums.sort(reverse=True)
         left = nums[0]
         sum_nums = sum(nums)
@@ -21,6 +21,7 @@ class Solution:
             left += nums[i]
             i += 1
         return nums[:i]
+
 
 
 if __name__ == "__main__":
