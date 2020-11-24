@@ -4,7 +4,7 @@ import time
 from typing import List
 
 class Solution:
-    def sortArrayByParityII(self, A: List[int]) -> List[int]:
+    def sortArrayByParityII2(self, A: List[int]) -> List[int]:
         even = []
         odd = []
         res = []
@@ -16,6 +16,19 @@ class Solution:
         for i in range(len(even)):
             res.append(even[i])
             res.append(odd[i])
+        return res
+
+    def sortArrayByParityII(self, A: List[int]) -> List[int]:
+        res = [0] * len(A)
+        odd, even = 1, 0
+        for a in A:
+            if a % 2:
+                res[odd] = a
+                odd += 2
+            else:
+                res[even] = a
+                even += 2
+
         return res
 
 if __name__ == "__main__":
