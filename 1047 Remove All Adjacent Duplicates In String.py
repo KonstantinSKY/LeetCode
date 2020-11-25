@@ -4,14 +4,42 @@ import time
 from typing import List
 
 class Solution:
-    def removeDuplicates(self, S: str) -> str:
+    def removeDuplicates2(self, S: str) -> str:
         i = 1
         while i <= len(S)-1:
             if S[i] == S[i-1]:
-                S = S[:i-1]+S[i+1:]
+                S = S.replace(S[i]*2, '')
                 i -= 1 if i > 1 else 0
             else:
                 i += 1
+        return S
+
+
+    def removeDuplicates3(self, S: str) -> str:
+        dup_set = {2 * ch for ch in S}
+        prev_len = -1
+        while prev_len != len(S):
+            prev_len = len(S)
+            for dup in dup_set:
+                S = S.replace(dup, '')
+        return S
+
+    def removeDuplicates4(self, S: str) -> str:
+        S_set = {ch for ch in S}
+        prev_len = -1
+        while prev_len != len(S):
+            prev_len = len(S)
+            for ch in S_set:
+                S = S.replace(ch*2, '')
+        return S
+
+    def removeDuplicates(self, S: str) -> str:
+        S_set = {ch * 2 for ch in S}
+        prev_len = -1
+        while prev_len != len(S):
+            prev_len = len(S)
+            for ch in S_set:
+                S = S.replace(ch, '')
         return S
 
 
