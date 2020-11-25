@@ -5,9 +5,16 @@ from typing import List
 
 
 class Solution:
-    def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
+    def kWeakestRows1(self, mat: List[List[int]], k: int) -> List[int]:
         n = sorted([(mat[i], i) for i in range(len(mat))])
         return [n[i][1] for i in range(k)]
+
+    def kWeakestRows2(self, mat: List[List[int]], k: int) -> List[int]:
+        n = sorted([(sum(mat[i]), i) for i in range(len(mat))])
+        return [n[i][1] for i in range(k)]
+
+    def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
+        return sorted([i for i in range(len(mat))], key=lambda x: mat[x])[:k]
 
 
 if __name__ == "__main__":
