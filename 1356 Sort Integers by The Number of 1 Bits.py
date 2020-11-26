@@ -5,9 +5,11 @@ from typing import List
 
 
 class Solution:
-    def sortByBits(self, arr: List[int]) -> List[int]:
+    def sortByBits1(self, arr: List[int]) -> List[int]:
         return [i[1] for i in sorted([(bin(num).count("1"), num) for num in arr])]
 
+    def sortByBits(self, arr: List[int]) -> List[int]:
+        return sorted(arr, key=lambda n: (bin(n).count('1'), n))
 
 if __name__ == "__main__":
     start_time = time.time()
