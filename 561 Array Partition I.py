@@ -16,6 +16,10 @@ class Solution:
             res += nums[i]
         return res
 
+    def arrayPairSum(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum(nums[::2])
+
 
 if __name__ == "__main__":
     start_time = time.time()
