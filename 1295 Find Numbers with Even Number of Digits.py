@@ -8,7 +8,7 @@ class Solution:
     def findNumbers1(self, nums: List[int]) -> int:
         return sum([1 for i in nums if len(str(i)) % 2 == 0])
 
-    def findNumbers(self, nums: List[int]) -> int:
+    def findNumbers2(self, nums: List[int]) -> int:
         res = 0
         for i in nums:
             k = 0
@@ -18,6 +18,15 @@ class Solution:
             if k % 2 == 0:
                 res += 1
         return res
+
+    def findNumbers1(self, nums: List[int]) -> int:
+        count = 0
+        for i in nums:
+            if len(str(i)) % 2 == 0:
+                count += 1
+        return count
+
+
 
 
 if __name__ == "__main__":
