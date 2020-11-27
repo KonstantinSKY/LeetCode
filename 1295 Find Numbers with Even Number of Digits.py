@@ -5,8 +5,19 @@ from typing import List
 
 
 class Solution:
-    def findNumbers(self, nums: List[int]) -> int:
+    def findNumbers1(self, nums: List[int]) -> int:
         return sum([1 for i in nums if len(str(i)) % 2 == 0])
+
+    def findNumbers(self, nums: List[int]) -> int:
+        res = 0
+        for i in nums:
+            k = 0
+            while i > 0:
+                i //= 10
+                k += 1
+            if k % 2 == 0:
+                res += 1
+        return res
 
 
 if __name__ == "__main__":
