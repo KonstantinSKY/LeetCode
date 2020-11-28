@@ -24,7 +24,6 @@ class Solution:
         return res
 
 
-        print(nums)
 if __name__ == "__main__":
     start_time = time.time()
     print(Solution().countLargestGroup(24))
