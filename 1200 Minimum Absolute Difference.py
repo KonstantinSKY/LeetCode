@@ -5,7 +5,7 @@ from typing import List
 
 
 class Solution:
-    def minimumAbsDifference(self, arr: List[int]) -> List[List[int]]:
+    def minimumAbsDifference2(self, arr: List[int]) -> List[List[int]]:
         arr.sort()
         temp_arr = sorted([[abs(arr[i+1]-arr[i]), arr[i], arr[i+1]] for i in range(len(arr)-1)])
         min = temp_arr[0][0]
@@ -17,6 +17,21 @@ class Solution:
             res.append([temp_arr[i][1], temp_arr[i][2]])
         return res
 
+    def minimumAbsDifference(self, arr: List[int]) -> List[List[int]]:
+        arr = sorted(arr)
+        mini = 10 ** 5 + 1
+        miniArr = []
+
+        for i in range(0, len(arr) - 1):
+            d = arr[i + 1] - arr[i]
+            if d < mini:
+                mini = d
+                miniArr.clear()
+                miniArr.append([arr[i], arr[i + 1]])
+            elif d == mini:
+                miniArr.append([arr[i], arr[i + 1]])
+
+        return miniArr
 
 if __name__ == "__main__":
     start_time = time.time()
