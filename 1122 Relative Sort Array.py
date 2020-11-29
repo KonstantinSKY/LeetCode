@@ -5,13 +5,16 @@ from typing import List
 
 
 class Solution:
-    def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
+    def relativeSortArray2(self, arr1: List[int], arr2: List[int]) -> List[int]:
         res = []
         for j in arr2:
             res.extend([j] * arr1.count(j))
             arr1 = list(filter(lambda a: a != j, arr1))
         return res + sorted(arr1)
 
+    def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
+        indices = {arr2[i]:i for i in range(len(arr2))}
+        return sorted(arr1, key= lambda num : indices[num] if num in indices else num + len(arr2))
 
 if __name__ == "__main__":
     start_time = time.time()
