@@ -8,6 +8,10 @@ class Solution:
     def missingNumber(self, nums: List[int]) -> int:
         return list(set(i for i in range(len(nums)+1)) - set(nums))[0]
 
+    def missingNumber1(self, nums: List[int]) -> int:
+        expected_sum = len(nums)*(len(nums)+1)//2
+        actual_sum = sum(nums)
+        return expected_sum - actual_sum
 
 if __name__ == "__main__":
     start_time = time.time()
