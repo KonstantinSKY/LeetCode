@@ -9,21 +9,16 @@ class Solution:
         if len(A) != len(B):
             return False
 
+        if A == B and len(set(A)) < len(A):
+            return True
         idx = []
-        flag = False
         for i in range(len(A)):
             if A[i] != B[i]:
                 idx.append(i)
             if len(idx) > 2:
                 return False
-            if len(idx) == 0:
-                if A.count(A[i]) > 1:
-                    flag = True
 
         if len(idx) == 2 and A[idx[0]] == B[idx[1]] and A[idx[1]] == B[idx[0]]:
-            return True
-
-        if len(idx) == 0 and flag:
             return True
 
         return False
