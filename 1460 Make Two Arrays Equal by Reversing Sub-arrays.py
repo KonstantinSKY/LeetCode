@@ -5,12 +5,11 @@ from typing import List
 
 
 class Solution:
-    def canBeEqual(self, target: List[int], arr: List[int]) -> bool:
-        # target.sort()
-        # arr.sort()
-        # print ("".join(map(str, arr)))
+    def canBeEqual2(self, target: List[int], arr: List[int]) -> bool:
         return "".join(map(str, sorted(arr))) == "".join(map(str, sorted(target)))
 
+    def canBeEqual(self, target: List[int], arr: List[int]) -> bool:
+        return sorted(arr) == sorted(target)
 
 if __name__ == "__main__":
     start_time = time.time()
