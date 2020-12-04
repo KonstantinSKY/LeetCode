@@ -4,7 +4,7 @@ import time
 from typing import List
 
 class Solution:
-    def thirdMax(self, nums: List[int]) -> int:
+    def thirdMax1(self, nums: List[int]) -> int:
         nums.sort(reverse=True)
         count = 1
         for i in range(1, len(nums)):
@@ -14,6 +14,11 @@ class Solution:
             if count == 3:
                 return nums[i]
         return nums[0]
+
+    def thirdMax(self, nums: List[int]) -> int:
+        new = sorted(list(set(nums)), reverse=True)
+        return new[0] if len(new) < 3 else new[2]
+
 
 if __name__ == "__main__":
     start_time = time.time()
