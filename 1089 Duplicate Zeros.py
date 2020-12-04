@@ -6,7 +6,7 @@ from typing import List
 class Solution:
     def duplicateZeros(self, arr: List[int]) -> None:
         i = 0
-        while i < len(arr):
+        while i < len(arr) - 1:
             if arr[i] == 0:
                 arr.pop(-1)
                 i += 1
