@@ -5,12 +5,12 @@ from typing import List
 
 
 class Solution:
+    def sortedSquares1(self, nums: List[int]) -> List[int]:
+        return sorted([num ** 2 for num in nums])
+
     def sortedSquares(self, nums: List[int]) -> List[int]:
-        return sorted([num * num for num in nums])
+        return sorted(list(map(lambda x: x ** 2, nums)))
 
-
-
-        
 if __name__ == "__main__":
     start_time = time.time()
     print(Solution().sortedSquares([-4, -1, 0, 3, 10]))
