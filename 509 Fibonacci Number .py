@@ -8,8 +8,7 @@ class Solution:
         fib_arr = [0, 1]
         for i in range(2, N+1):
             fib_arr.append(fib_arr[0] + fib_arr[1])
-            fib_arr.pop(0)
-        return fib_arr[-1] if N > 0 else 0
+        return fib_arr[N]
 
 if __name__ == "__main__":
     start_time = time.time()
