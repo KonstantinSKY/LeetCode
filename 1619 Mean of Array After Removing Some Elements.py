@@ -16,6 +16,11 @@ class Solution:
         else:
             return sum(arr) / len_
 
+    def trimMean(self, arr: List[int]) -> float:
+        count = int(len(arr) * 0.05)
+        arr = sorted(arr)[count:-count]
+        return sum(arr) / len(arr)
+
 
 if __name__ == "__main__":
     start_time = time.time()
